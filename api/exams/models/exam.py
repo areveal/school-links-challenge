@@ -77,7 +77,7 @@ class Exam(models.Model):
 
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=100)
-    max_score = models.IntegerField()
+    max_score = models.IntegerField(null=True)
     state = models.TextField(choices=StateChoices.choices, max_length=30, null=True, default=None)
     subject = models.CharField(max_length=100, null=True, default=None)
     grade = models.TextField(choices=GradeLevelChoices.choices, max_length=20, null=True, default=None)
