@@ -16,6 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import (
+    ExamListCreateView,
+    ExamDetailView,
+)
 
 urlpatterns = [
+    # Exams Paths
+    path('exams/', ExamListCreateView.as_view(), name="exams"),
+    path('exams/<int:pk>/', ExamDetailView.as_view(), name="exam_details"),
 ]
