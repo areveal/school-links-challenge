@@ -21,13 +21,23 @@ from .views import (
     ExamDetailView,
     ResultsListCreateView,
     ResultDetailView,
+    ExamAttributeListCreateView,
+    ExamAttributeDetailView,
+    ResultPropertyListCreateView,
+    ResultPropertyDetailView,
 )
 
 urlpatterns = [
     # Exams Paths
     path('exams/', ExamListCreateView.as_view(), name="exams"),
     path('exams/<int:pk>/', ExamDetailView.as_view(), name="exam_details"),
+    # Exam Attribute Paths
+    path('exams-attributes/', ExamAttributeListCreateView.as_view(), name="exam_attributes"),
+    path('exam-attributes/<int:pk>/', ExamAttributeDetailView.as_view(), name="exam_attribute_details"),
     # Result Paths
     path('results/', ResultsListCreateView.as_view(), name="results"),
     path('results/<int:pk>/', ResultDetailView.as_view(), name="result_details"),
+    # Result Property Paths
+    path('result-properties/', ResultPropertyListCreateView.as_view(), name="result_properties"),
+    path('result-properties/<int:pk>/', ResultPropertyDetailView.as_view(), name="result_property_details"),
 ]
