@@ -81,7 +81,6 @@ class Exam(models.Model):
     state = models.TextField(choices=StateChoices.choices, max_length=30, null=True, default=None)
     subject = models.CharField(max_length=100, null=True, default=None)
     grade = models.TextField(choices=GradeLevelChoices.choices, max_length=20, null=True, default=None)
-    properties = models.JSONField(default=dict)
 
     def __str__(self):
         return f"{self.name} ({self.code})"
