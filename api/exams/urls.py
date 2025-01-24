@@ -38,6 +38,6 @@ urlpatterns = [
     path('results/', ResultsListCreateView.as_view(), name="results"),
     path('results/<int:pk>/', ResultDetailView.as_view(), name="result_details"),
     # Result Property Paths
-    path('result-properties/', ResultPropertyListCreateView.as_view(), name="result_properties"),
+    path('results/<int:pk>/result-properties/', ResultPropertyListCreateView.as_view(), name="result_properties"),
     path('result-properties/<int:pk>/', ResultPropertyDetailView.as_view(), name="result_property_details"),
 ]
