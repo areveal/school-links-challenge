@@ -6,11 +6,11 @@ from students.serializers import StudentSerializer
 
 
 class ResultSerializer(serializers.ModelSerializer):
-    properties = serializers.JSONField()
+    properties = serializers.JSONField(read_only=True)
 
     class Meta:
         model = Result
-        fields = ["id", "student", "exam", "date", "properties"]
+        fields = ["id", "student", "exam", "score", "date", "properties"]
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
