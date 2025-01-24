@@ -32,7 +32,7 @@ urlpatterns = [
     path('exams/', ExamListCreateView.as_view(), name="exams"),
     path('exams/<int:pk>/', ExamDetailView.as_view(), name="exam_details"),
     # Exam Attribute Paths
-    path('exams-attributes/', ExamAttributeListCreateView.as_view(), name="exam_attributes"),
+    path('exam-attributes/', ExamAttributeListCreateView.as_view(), name="exam_attributes"),
     path('exam-attributes/<int:pk>/', ExamAttributeDetailView.as_view(), name="exam_attribute_details"),
     # Result Paths
     path('results/', ResultsListCreateView.as_view(), name="results"),
