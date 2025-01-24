@@ -20,5 +20,5 @@ from districts.views import DistrictListCreateView, DistrictDetailView
 
 urlpatterns = [
     path('districts/', DistrictListCreateView.as_view(), name="districts"),
-    path('districts/<int:pk>/', DistrictDetailView.as_view(), name="district_detail"),
+    path('districts/<int:pk>/', DistrictDetailView.as_view(), name="district_details"),
 ]
