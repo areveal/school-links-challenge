@@ -6,6 +6,7 @@ class Result(models.Model):
     student = models.ForeignKey('students.Student', related_name="results", on_delete=models.CASCADE)
     exam = models.ForeignKey('exams.Exam', related_name='results', on_delete=models.CASCADE)
     date = models.DateTimeField()  # Indicates the date that the test was submitted/taken
+    score = models.IntegerField(default=None, null=True)
 
     def __str__(self):
         return f"{self.exam.code} result for {self.student}"
