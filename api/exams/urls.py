@@ -19,10 +19,15 @@ from django.urls import path
 from .views import (
     ExamListCreateView,
     ExamDetailView,
+    ResultsListCreateView,
+    ResultDetailView,
 )
 
 urlpatterns = [
     # Exams Paths
     path('exams/', ExamListCreateView.as_view(), name="exams"),
     path('exams/<int:pk>/', ExamDetailView.as_view(), name="exam_details"),
+    # Result Paths
+    path('results/', ResultsListCreateView.as_view(), name="results"),
+    path('results/<int:pk>/', ResultDetailView.as_view(), name="result_details"),
 ]
