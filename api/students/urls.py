@@ -17,5 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from students.views import StudentListCreateView, StudentDetailView
+
 urlpatterns = [
+    path('students/', StudentListCreateView.as_view(), name="students"),
+    path('students/<int:pk>/', StudentDetailView.as_view(), name="student_details"),
 ]
