@@ -1,12 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {Accordion, Col, Form, Row} from "react-bootstrap";
+import api from "../api";
 
 
 function Filters({searchText, OnSortChange, OnFilterChange, OnSearchChange}) {
-    const [filterables, setFilterables] = useState({});
+    const [filterables, setFilterables] = useState({
+        "exam_names": [],
+        "subjects": [],
+        "grades": [],
+        "states": []
+    });
 
     function getFilterables() {
-
+        api.get("api/filterables/")
+            .then((res) => res.data)
+            .then((data) => {setFilterables(data); console.log(data)})
+            .catch((err) => {alert(err)});
     }
 
     useEffect(() => {
@@ -22,40 +31,33 @@ function Filters({searchText, OnSortChange, OnFilterChange, OnSearchChange}) {
                         <Row>
                             <Col>
                                 <Form.Select onChange={OnSortChange}>
-                                    <option>Sort</option>
+                                    <option value="">Sort</option>
                                     <option value="score">Score Asc</option>
                                     <option value="-score">Score Desc</option>
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="exam_name">
-                                    <option>Exam Name</option>
-                                    <option>Ohio End of Course Exam</option>
-                                    <option>WebXam</option>
+                                    <option value="">All Exams</option>
+                                    {filterables.exam_names.map((exam_name) => <option>{exam_name}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="subject">
-                                    <option>Subject</option>
-                                    <option>English</option>
-                                    <option>Maths</option>
+                                    <option value="">All Subjects</option>
+                                    {filterables.subjects.map((subject) => <option>{subject}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="grade">
-                                    <option>Grade</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
+                                    <option value="">All Grades</option>
+                                    {filterables.grades.map((grade) => <option>{grade}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="state">
-                                    <option>State</option>
-                                    <option>CO</option>
-                                    <option>TX</option>
-                                    <option>OH</option>
+                                    <option value="">All States</option>
+                                    {filterables.states.map((state) => <option>{state}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col align="end">
