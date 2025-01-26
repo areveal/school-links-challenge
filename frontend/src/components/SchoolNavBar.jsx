@@ -7,10 +7,10 @@ function SchoolNavBar() {
         <Navbar>
             <NavbarBrand>School Links</NavbarBrand>
             <Nav>
-                <Nav.Link as={NavLink} to="/" exact activeClassName="active">Home</Nav.Link>
-                <Nav.Link as={NavLink} to="/students" activeClassName="active">Students</Nav.Link>
-                <Nav.Link as={NavLink} to="/exams" activeClassName="active">Exams</Nav.Link>
-                <Nav.Link as={NavLink} to="/exam-results" activeClassName="active">Exam Results</Nav.Link>
+                <Nav.Link as={NavLink} to="/" exact="true">Home</Nav.Link>
+                <Nav.Link as={NavLink} to="/students" >Students</Nav.Link>
+                <Nav.Link as={NavLink} to="/exams" >Exams</Nav.Link>
+                <Nav.Link as={NavLink} to="/exam-results" >Exam Results</Nav.Link>
             </Nav>
         </Navbar>
     );
