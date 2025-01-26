@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import SchoolNavBar from "../components/SchoolNavBar";
-import {Container, Row} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import StudentRow from '../components/StudentRow'
 import api from "../api";
 import Filters from "../components/Filters";
