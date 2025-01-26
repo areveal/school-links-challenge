@@ -5,20 +5,23 @@ import Filters from "../components/Filters";
 import api from "../api";
 import ResultRow from "../components/ResultRow";
 
-function ExamResults() {
+function ExamResults({urlParams, searchText, OnSortChange, OnFilterChange, OnSearchTextChange}) {
     const [results, setResults] = useState([])
 
     useEffect(() => {
-        api.get('api/results/')
+        const baseUrlPath = "api/results/";
+        const urlPath = urlParams.toString() ? baseUrlPath + '?' +  urlParams.toString() : baseUrlPath;
+
+        api.get(urlPath)
             .then((res) => res.data)
             .then((data) => {setResults(data); console.log(data)})
             .catch((err) => alert(err));
-    }, []);
+    }, [urlParams]);
 
     return (
         <Container>
             <SchoolNavBar></SchoolNavBar>
-            <Filters />
+            <Filters searchText={searchText} OnSortChange={OnSortChange} OnFilterChange={OnFilterChange} OnSearchChange={OnSearchTextChange} />
             <Table>
                 <thead>
                     <tr>
