@@ -20,7 +20,9 @@ class ResultSerializer(serializers.ModelSerializer):
             properties.update({result_property.attribute.name: result_property.value})
         representation["properties"] = properties
         # We want repr of student to be the serialized data, but the write should retain the FK expectation.
-        representation["student"] = StudentSerializer(instance.student).data
+        student_data = StudentSerializer(instance.student).data
+        student_data.pop("results")  # remove results from student serializer. We already have this
+        representation["student"] =  student_data
         # We want repr of exam to be the serialized data, but the write should retain the FK expectation.
         representation["exam"] = ExamSerializer(instance.exam).data
         return representation
