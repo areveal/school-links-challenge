@@ -56,12 +56,7 @@ function Students() {
     function HandleFilterChange(e) {
         console.log(e.target.value);
         const filtersCopy = {...filters};
-
-        if (e.target.value) {
-            filtersCopy[e.target.title] = e.target.value;
-        } else {
-            filtersCopy.pop(e.target.title);
-        }
+        filtersCopy[e.target.title] = e.target.value;
 
         setFilters(filtersCopy);
     }
