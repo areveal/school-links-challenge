@@ -21,7 +21,9 @@ function Students() {
 
         if (filters) {
             Object.entries(filters).forEach(([key, value]) => {
-                params.append(key, value);
+                if (value) {
+                    params.append(key, value);
+                }
             })
         }
 
