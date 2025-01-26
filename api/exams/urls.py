@@ -25,6 +25,7 @@ from .views import (
     ExamAttributeDetailView,
     ResultPropertyListCreateView,
     ResultPropertyDetailView,
+    FilterablesRetrieveView,
 )
 
 urlpatterns = [
@@ -40,4 +41,7 @@ urlpatterns = [
     # Result Property Paths
     path('results/<int:pk>/result-properties/', ResultPropertyListCreateView.as_view(), name="result_properties"),
     path('result-properties/<int:pk>/', ResultPropertyDetailView.as_view(), name="result_property_details"),
+    # Filterables Path
+    path('filterables/', FilterablesRetrieveView.as_view(), name="filterables"),
+
 ]
