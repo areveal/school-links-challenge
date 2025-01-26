@@ -39,25 +39,25 @@ function Filters({searchText, OnSortChange, OnFilterChange, OnSearchChange}) {
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="exam_name">
                                     <option value="">All Exams</option>
-                                    {filterables.exam_names.map((exam_name) => <option>{exam_name}</option>)}
+                                    {filterables.exam_names.map((exam_name) => <option key={"exam_name_" + exam_name}>{exam_name}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="subject">
                                     <option value="">All Subjects</option>
-                                    {filterables.subjects.map((subject) => <option>{subject}</option>)}
+                                    {filterables.subjects.map((subject) => <option key={"subject_" + subject}>{subject}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="grade">
                                     <option value="">All Grades</option>
-                                    {filterables.grades.map((grade) => <option>{grade}</option>)}
+                                    {filterables.grades.map((grade) => <option key={"grade_" + grade}>{grade}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col>
                                 <Form.Select onChange={OnFilterChange} title="state">
                                     <option value="">All States</option>
-                                    {filterables.states.map((state) => <option>{state}</option>)}
+                                    {filterables.states.map((state) => <option key={"state_" + state}>{state}</option>)}
                                 </Form.Select>
                             </Col>
                             <Col align="end">
