@@ -1,3 +1,4 @@
 build:
   docker:
-    web: Dockerfile.web  # This just allows us to get the heroku app up
+    api: api/Dockerfile
+    frontend: frontend/Dockerfile
