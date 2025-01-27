@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import SchoolNavBar from "../components/SchoolNavBar";
-import {Col, Container, Row, Table} from "react-bootstrap";
+import {Container, Table} from "react-bootstrap";
 import api from "../api";
 import ExamRow from "../components/ExamRow";
 
