@@ -8,20 +8,19 @@ import Filters from "../components/Filters";
 function Students({urlParams, searchText, OnSortChange, OnFilterChange, OnSearchTextChange}) {
     const [students, setStudents] = useState([]);
 
-    // function to build API call to get students using filter/search/sort criteria
-    function getStudents() {
-
-        const baseUrlPath = "api/students/";
-        const urlPath = urlParams.toString() ? baseUrlPath + '?' +  urlParams.toString() : baseUrlPath;
-
-        api
-            .get(urlPath)
-            .then((res) => res.data)
-            .then((data) => {setStudents(data); console.log(data);})
-            .catch((err) => alert(err));
-    }
-
     useEffect(() => {
+        // function to build API call to get students using filter/search/sort criteria
+        function getStudents() {
+
+            const baseUrlPath = "api/students/";
+            const urlPath = urlParams.toString() ? baseUrlPath + '?' +  urlParams.toString() : baseUrlPath;
+
+            api
+                .get(urlPath)
+                .then((res) => res.data)
+                .then((data) => {setStudents(data); console.log(data);})
+                .catch((err) => alert(err));
+        }
         getStudents();
     }, [urlParams]);
 
