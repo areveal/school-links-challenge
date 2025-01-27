@@ -1,7 +1,3 @@
 build:
-  api:
-    docker:
-      web: ./api/Dockerfile  # path to backend Dockerfile
-  frontend:
-    docker:
-      web: ./frontend/Dockerfile  # path to frontend Dockerfile
+  docker:
+    web: Dockerfile.web  # This just allows us to get the heroku app up
