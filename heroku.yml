@@ -1,0 +1,7 @@
+build:
+  api:
+    docker:
+      web: ./api/Dockerfile  # path to backend Dockerfile
+  frontend:
+    docker:
+      web: ./frontend/Dockerfile  # path to frontend Dockerfile

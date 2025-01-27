@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '0.0.0.0',
     '127.0.0.1',
+    'murmuring-badlands-14443.herokuapp.com',
 ]
 
 
