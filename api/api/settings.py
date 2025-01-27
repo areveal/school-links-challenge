@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-wngxcbin@hgt&z)p@b$cwwb)_8yke%m9b6163yj@*s=4^5gw@6
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     '0.0.0.0',
     '127.0.0.1',
     'murmuring-badlands-14443.herokuapp.com',
