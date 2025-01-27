@@ -2,6 +2,11 @@
 
 A full-stack web application built with Django (backend) and React (frontend), containerized using Docker for ease of deployment and development.
 
+## Important Links
+
+- [DesignDocument](https://www.notion.so/schoolinkshome/System-Design-Document-1a3f464de85648d98e51ced3d1ffe89e)
+- [Demo video](https://file.notion.so/f/f/fcaf1531-6cd5-4234-a120-ba497ce3f6dc/f2811583-d271-4014-a6be-008ad226cf52/video1864631719.mp4?table=block&id=37a9a9d6-d18d-4607-b0bc-d83873ec0e11&spaceId=fcaf1531-6cd5-4234-a120-ba497ce3f6dc&expirationTimestamp=1738108800000&signature=SJKLc68R0SAmb29nmTfYFPb6l65kdv786z1iMCna88Q&downloadName=video1864631719.mp4)
+
 ## Features
 
 - **Backend:** Django for APIs, ORM, and server-side logic.
