@@ -29,7 +29,6 @@ ALLOWED_HOSTS = [
     'localhost',
     '0.0.0.0',
     '127.0.0.1',
-    'murmuring-badlands-14443.herokuapp.com',
 ]
 
 
@@ -42,10 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third party apps
     'rest_framework',
     'corsheaders',
     'django_filters',
     'polymorphic',
+    # Project apps
     'districts',
     'students',
     'exams',
