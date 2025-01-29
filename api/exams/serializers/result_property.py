@@ -44,12 +44,9 @@ class ResultPropertySerializer(serializers.ModelSerializer):
         """
         Create ResultProperty using ResultProperty factory to handle data types
         """
-        attribute = validated_data.get("attribute")
-        factory = ResultPropertyFactory(attribute.data_type)
-
-        return factory.make(
+        return ResultPropertyFactory.make(
             result=self.result,
-            attribute=attribute,
+            attribute=validated_data.get("attribute"),
             value=validated_data.get("value")
         )
 
